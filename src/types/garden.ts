@@ -7,7 +7,7 @@ export interface Player {
   level: number
 }
 
-export type TaskType = 'water' | 'weed' | 'harvest' | 'plant' | 'check'
+export type TaskType = 'water' | 'weed' | 'harvest' | 'plant'
 
 export interface TaskLog {
   id: string

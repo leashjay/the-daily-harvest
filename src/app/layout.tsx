@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Fredoka, Nunito } from 'next/font/google'
+import { GameProvider } from '@/context/GameContext'
 import './globals.css'
 
 const heading = Fredoka({
@@ -32,9 +33,6 @@ export default function RootLayout({
         <nav className="border-b border-garden-soil/30 bg-garden-soil/30 backdrop-blur-sm">
           <div className="max-w-5xl mx-auto px-4 md:px-8 py-3 flex gap-6 text-sm font-heading font-semibold">
             <Link href="/" className="text-garden-light hover:text-garden-straw transition-colors">
-              Dashboard
-            </Link>
-            <Link href="/garden" className="text-garden-light hover:text-garden-straw transition-colors">
               Grow tunnel
             </Link>
             <Link href="/log" className="text-garden-light hover:text-garden-straw transition-colors">
@@ -42,7 +40,7 @@ export default function RootLayout({
             </Link>
           </div>
         </nav>
-        {children}
+        <GameProvider>{children}</GameProvider>
       </body>
     </html>
   )

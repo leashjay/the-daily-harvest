@@ -33,7 +33,6 @@ export const XP_REWARDS: Record<TaskType, number> = {
   weed:    15,
   harvest: 50,
   plant:   20,
-  check:   5,
 }
 
 export const TASK_LABELS: Record<TaskType, string> = {
@@ -41,5 +40,4 @@ export const TASK_LABELS: Record<TaskType, string> = {
   weed:    'Weeded',
   harvest: 'Harvested',
   plant:   'Planted',
-  check:   'Checked in',
 }

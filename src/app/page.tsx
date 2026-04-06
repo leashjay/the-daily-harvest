@@ -1,29 +1,48 @@
+import Image from 'next/image'
+import TunnelMap from '@/components/TunnelMap'
+import XPBar from '@/components/XPBar'
+import { initialState } from '@/lib/players'
+
 export default function Home() {
+  const { players } = initialState()
+
   return (
-    <main className="min-h-screen px-4 py-8 md:px-8">
-      <div className="max-w-5xl mx-auto space-y-8">
+    <main className="min-h-[calc(100vh-3.5rem)] px-4 py-6 md:px-8">
+      <div className="max-w-5xl mx-auto space-y-6">
+        {/* Hero — shows the tunnel (bottom portion of image) */}
+        <div className="relative rounded-3xl overflow-hidden shadow-lg h-56 md:h-72">
+          <Image
+            src="/images/garden-plot.jpeg"
+            alt="Our grow tunnel"
+            fill
+            className="object-cover object-[center_75%]"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
 
-        <header className="text-center space-y-1">
-          <h1 className="font-heading text-4xl md:text-5xl font-semibold text-garden-light">
-            The Daily Harvest
-          </h1>
-          <p className="text-garden-straw text-sm">
-            Cam &amp; Leesh — growing together, richer harvests
-          </p>
-        </header>
+          <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+            <h1 className="font-heading text-3xl md:text-4xl font-semibold text-white drop-shadow-md">
+              The Daily Harvest
+            </h1>
+            <p className="text-garden-straw text-sm mt-1">
+              Cam &amp; Leesh — growing together, richer harvests
+            </p>
+          </div>
+        </div>
 
-        {/* Leaderboard — TODO: wire up AppState */}
-        <section className="max-w-lg mx-auto bg-garden-soil/30 backdrop-blur rounded-2xl border border-garden-soil/20 p-6">
-          <h2 className="font-heading text-lg font-semibold text-garden-light mb-4">Leaderboard</h2>
-          <p className="text-sm text-garden-straw italic">Coming soon — build Leaderboard.tsx</p>
-        </section>
+        {/* Gardener progress cards */}
+        <div>
+          <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-garden-straw/70 mb-3">
+            Gardener progress
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <XPBar player={players.cam} />
+            <XPBar player={players.leesh} />
+          </div>
+        </div>
 
-        {/* Activity feed — TODO: wire up AppState */}
-        <section className="bg-garden-soil/30 backdrop-blur rounded-2xl border border-garden-soil/20 p-6">
-          <h2 className="font-heading text-lg font-semibold text-garden-light mb-4">Recent activity</h2>
-          <p className="text-sm text-garden-straw italic">Coming soon — build ActivityFeed.tsx</p>
-        </section>
-
+        {/* Gamified tunnel map */}
+        <TunnelMap />
       </div>
     </main>
   )
