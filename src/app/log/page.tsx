@@ -7,13 +7,13 @@ export default function LogPage() {
   const { activePlayer, setActivePlayer, state } = useGame()
 
   return (
-    <main className="min-h-[calc(100vh-3.5rem)] px-4 py-6 md:px-8">
+    <main className="min-h-screen px-4 py-6 md:px-8 pb-28">
       <div className="max-w-3xl mx-auto space-y-6">
 
         <header>
-          <h1 className="font-heading text-3xl font-semibold text-garden-light">Garden log</h1>
+          <h1 className="font-heading text-3xl font-semibold text-garden-light">Get dirty</h1>
           <p className="text-garden-straw/70 text-sm mt-1">
-            Who&apos;s been out in the tunnel?
+            Who&apos;s been out in the tunnel today?
           </p>
         </header>
 

@@ -64,7 +64,6 @@ export default function TaskBoard() {
     [activePlayer, harvestSlot, addToast],
   )
 
-  const recentLogs = state.taskLogs.filter(l => l.playerId === activePlayer).slice(0, 6)
   const emptySlots = state.tunnelSlots.filter(s => s.stage === 'empty')
   const grownSlots = state.tunnelSlots.filter(s => s.stage !== 'empty')
 
@@ -239,33 +238,6 @@ export default function TaskBoard() {
                 </div>
               )
             })}
-          </div>
-        </section>
-      )}
-
-      {/* ── Recent activity ── */}
-      {recentLogs.length > 0 && (
-        <section>
-          <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-garden-straw/50 mb-3">
-            Recent
-          </h2>
-          <div className="space-y-1.5">
-            {recentLogs.map(log => (
-              <div
-                key={log.id}
-                className="flex items-center gap-3 bg-garden-soil/15 rounded-xl px-4 py-2 border border-garden-soil/10"
-              >
-                <span className="text-base">
-                  {log.taskType === 'water' ? '💧' : log.taskType === 'weed' ? '🌿' : log.taskType === 'plant' ? '🪴' : '🧺'}
-                </span>
-                <span className="text-sm text-garden-straw/70 flex-1">
-                  {log.notes ?? log.taskType}
-                </span>
-                <span className="text-xs text-garden-light/40 font-heading">
-                  +{XP_REWARDS[log.taskType]} XP
-                </span>
-              </div>
-            ))}
           </div>
         </section>
       )}
