@@ -16,7 +16,7 @@ const body = Nunito({
 
 export const metadata: Metadata = {
   title: 'The Daily Harvest',
-  description: 'Cam and Leesh\'s real-life garden game — log tasks, earn XP, compete.',
+  description: 'Cam and Leesh\'s real-life garden game — log tasks, earn XP, grow together.',
 }
 
 export default function RootLayout({
@@ -29,15 +29,15 @@ export default function RootLayout({
       <body
         className={`${heading.variable} ${body.variable} font-body antialiased min-h-screen`}
       >
-        <nav className="border-b border-garden-light/60 bg-white/70 backdrop-blur-sm">
-          <div className="max-w-5xl mx-auto px-4 md:px-8 py-3 flex gap-6 text-sm font-heading font-semibold text-garden-soil">
-            <Link href="/" className="text-garden-green hover:text-garden-brick transition-colors">
+        <nav className="border-b border-garden-soil/30 bg-garden-soil/30 backdrop-blur-sm">
+          <div className="max-w-5xl mx-auto px-4 md:px-8 py-3 flex gap-6 text-sm font-heading font-semibold">
+            <Link href="/" className="text-garden-light hover:text-garden-straw transition-colors">
               Dashboard
             </Link>
-            <Link href="/garden" className="text-garden-green hover:text-garden-brick transition-colors">
+            <Link href="/garden" className="text-garden-light hover:text-garden-straw transition-colors">
               Grow tunnel
             </Link>
-            <Link href="/log" className="text-garden-green hover:text-garden-brick transition-colors">
+            <Link href="/log" className="text-garden-light hover:text-garden-straw transition-colors">
               Log task
             </Link>
           </div>

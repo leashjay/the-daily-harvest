@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f0f7fb;
-  --foreground: #2d2416;
+  --background: #3d2b1f;
+  --foreground: #f5efe8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-garden-green: #4a7c59;
-  --color-garden-light: #a8d5b5;
-  --color-garden-soil: #7b5e3a;
-  --color-garden-straw: #e8d5a3;
-  --color-garden-brick: #c9756c;
-  --color-garden-sky: #b8d4e8;
+  /* Derived from garden-plot.jpeg */
+  --color-garden-green: #5a9640;      /* vibrant grass green */
+  --color-garden-light: #9dcc75;      /* young leaf / highlight */
+  --color-garden-soil: #8b5535;       /* rich chocolate earth */
+  --color-garden-straw: #e6d49a;      /* tunnel netting / straw */
+  --color-garden-brick: #c98a8e;      /* dusty-rose house wall */
+  --color-garden-slate: #8fa3ae;      /* corrugated roof blue-grey */
+  --color-garden-lavender: #b09ac8;   /* agapanthus flowers */
+  --color-garden-sky: #dce9d0;        /* soft ambient lawn green */
   --color-garden-torti: #4a4a4a;
 
   --font-heading: var(--font-fredoka);
@@ -23,8 +26,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f1412;
-    --foreground: #e8e4dc;
+    --background: #2a1c12;
+    --foreground: #f0e9df;
   }
 }
 
